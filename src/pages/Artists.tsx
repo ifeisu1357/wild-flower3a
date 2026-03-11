@@ -96,7 +96,7 @@ export default function Artists() {
             </div>
 
             {/* Main Content */}
-            <div className="flex-1 overflow-y-auto pt-10 pb-12 md:py-12 px-6 md:px-16 lg:px-24 bg-black/20 backdrop-blur-sm z-10 flex flex-col items-center relative">
+            <div className="flex-1 overflow-hidden md:overflow-y-auto pt-10 pb-12 md:py-12 px-6 md:px-16 lg:px-24 bg-black/20 backdrop-blur-sm z-10 flex flex-col items-center relative">
               {/* Mobile Back Button */}
               <button 
                 onClick={() => setSelectedArtist(null)}
