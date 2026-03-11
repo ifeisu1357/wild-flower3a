@@ -1,0 +1,12 @@
+# ==========================================
+# ## EXAMPLE HOME CONFIG ##
+# videoUrl: Must be a direct link to a video file (e.g., .mp4, .webm). 
+# Note: Google Drive links (like /view?usp=sharing) will NOT work directly as video sources in HTML.
+# You need a direct raw video link, or host the video in the /public folder and use "/video.mp4".
+# 
+# videoUrl: "/background.mp4"
+# linkUrl: "https://instagram.com/wildflower"
+# ==========================================
+
+videoUrl: ""
+linkUrl: ""

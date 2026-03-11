@@ -1,0 +1,79 @@
+# ==========================================
+# ## EXAMPLE ARTIST ENTRY ##
+# Copy the block below and paste it at the end to add a new artist.
+# 
+# - id: "new-artist-id"
+#   name: "Artist Name"
+#   tag: "ROLE / TAG"
+#   bio: "Artist biography goes here..."
+#   profilePicture: "/artist/filename.jpg"
+#   background: "#111111" # Can be a hex color or an image URL
+#   links:
+#     - label: "INSTAGRAM"
+#       url: "https://instagram.com/..."
+#   gallery: # Optional: add more images for the artist's bio page
+#     - "/artist/gallery1.jpg"
+#     - "/artist/gallery2.jpg"
+# ==========================================
+
+- id: "ifei"
+  name: "蘇裔非"
+  tag: "製作人/ARTIST"
+  bio: "測試123"
+  profilePicture: "/artist/syifei.jpg"
+  background: "#28392e"
+  links:
+    - label: "INSTAGRAM"
+      url: "https://www.instagram.com/ifeisu_"
+    - label: "網站"
+      url: "https://ifeisu.co"
+
+- id: "mgsmakegoodshit"
+  name: "MGS"
+  tag: "ARTIST"
+  bio: "自我介紹"
+  profilePicture: "/artist/mgs.jpg"
+  background: "#24303D"
+  links:
+    - label: "INSTAGRAM"
+      url: "https://www.instagram.com/mgsmakegoodshit"
+
+- id: "mufan"
+  name: "慕凡"
+  tag: "VISUAL"
+  bio: "aaaa"
+  profilePicture: "/artist/mufan.jpg"
+  background: "#414042"
+  links:
+    - label: "INSTAGRAM"
+      url: "https://www.instagram.com/mufan.pdf"
+
+- id: "baifen"
+  name: "百分"
+  tag: "ARTIST"
+  bio: "ddddedd"
+  profilePicture: "/artist/bafen.jpg"
+  background: "#402E2C"
+  links:
+    - label: "INSTAGRAM"
+      url: ""
+
+- id: "miaomiao"
+  name: "黃聿謙"
+  tag: "VISUAL"
+  bio: "ddddedd"
+  profilePicture: "/artist/miao.jpg"
+  background: "#3C3D31"
+  links:
+    - label: "INSTAGRAM"
+      url: "https://www.instagram.com/miaomiaonj/"
+
+- id: "SCOTT"
+  name: "SCOTT"
+  tag: "ARTIST"
+  bio: "ddddedd"
+  profilePicture: "/artist/scott.jpg"
+  background: "#1F3E23"
+  links:
+    - label: "INSTAGRAM"
+      url: "https://www.instagram.com/scottkrx/"

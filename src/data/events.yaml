@@ -1,0 +1,26 @@
+# ==========================================
+# ## EXAMPLE EVENT ENTRY ##
+# Copy the block below and paste it at the end to add a new event.
+# 
+# - id: "event-id"
+#   date: "2024.12.31"
+#   time: "23:00 - 05:00"
+#   title: "EVENT TITLE"
+#   description: "Event description or location details..."
+#   links:
+#     - label: "TICKETS"
+#       url: "https://example.com/tickets"
+# ==========================================
+
+- id: "hi"
+  date: "26-03-11"
+  title: "Hello World."
+  description: ""
+  links:
+    - label: ""
+      url: ""
+
+- id: "abswlistening"
+  date: "26-06-06"
+  title: "少年殺人事件Listening Party"
+  description: "TBD"
