@@ -161,7 +161,7 @@ export default function Artists() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                      className="flex flex-wrap gap-4 md:gap-6 w-full justify-center md:justify-end pt-4 md:pt-8 mt-10 md:mt-auto pb-2 md:pb-0"
+                      className="flex flex-wrap gap-4 md:gap-6 w-full justify-center md:justify-end pt-4 md:pt-8 mt-6 md:mt-auto pb-4 md:pb-0"
                     >
                       {selectedArtist.links?.map((link: any, i: number) => (
                         <a key={i} href={link.url} target="_blank" rel="noreferrer" className="font-sans text-[10px] md:text-xs tracking-[0.2em] uppercase text-white/70 hover:text-white transition-colors hover-trigger flex items-center gap-1 md:gap-2 drop-shadow-md">
