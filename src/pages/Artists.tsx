@@ -21,21 +21,29 @@ export default function Artists() {
     meta.content = description;
   }, []);
 
-  // Hide footer + remove main padding on mobile when artist is selected
+  // Fade footer on mobile when artist is selected
   useEffect(() => {
     const isMobile = window.matchMedia('(max-width: 767px)').matches;
     if (!isMobile) return;
     const footer = document.getElementById('site-footer') as HTMLElement | null;
     const main = document.querySelector('main') as HTMLElement | null;
+    if (!footer) return;
+
     if (selectedArtist) {
-      if (footer) footer.style.display = 'none';
+      footer.style.transition = 'opacity 0.4s ease';
+      footer.style.opacity = '0';
+      footer.style.pointerEvents = 'none';
       if (main) main.style.paddingBottom = '0';
     } else {
-      if (footer) footer.style.display = '';
+      footer.style.transition = 'opacity 0.4s ease';
+      footer.style.opacity = '1';
+      footer.style.pointerEvents = '';
       if (main) main.style.paddingBottom = '';
     }
     return () => {
-      if (footer) footer.style.display = '';
+      footer.style.opacity = '1';
+      footer.style.pointerEvents = '';
+      footer.style.transition = '';
       if (main) main.style.paddingBottom = '';
     };
   }, [selectedArtist]);
@@ -133,24 +141,21 @@ export default function Artists() {
               >
                 {/* ── MOBILE LAYOUT ── */}
                 <div className="flex md:hidden flex-col h-full">
-                  {/* Image — uncropped, centered, takes natural space */}
-                  <div className="flex-shrink-0 w-full flex items-center justify-center pt-8" style={{ height: '50%' }}>
+                  {/* Image — sits between top and name, equal spacing */}
+                  <div className="flex-1 flex items-center justify-center px-8">
                     <img
                       src={selectedArtist.profilePicture}
                       alt={selectedArtist.name}
-                      className="h-full w-full object-contain"
+                      className="w-full h-full object-contain max-h-full"
                     />
                   </div>
 
-                  {/* Info card — pushed toward bottom */}
-                  <div className="flex flex-col items-center text-center px-6 pt-2 pb-8 flex-1 justify-end gap-4">
+                  {/* Info card — bottom, same spacing as top */}
+                  <div className="flex-1 flex flex-col items-center text-center px-6 pb-8 justify-center gap-4">
                     <div className="flex flex-col items-center gap-3 w-full">
-                      {/* Name */}
                       <h2 className="font-sans font-black text-4xl tracking-tighter text-white uppercase leading-none">
                         {selectedArtist.name}
                       </h2>
-
-                      {/* Tags */}
                       <div className="flex flex-wrap gap-2 justify-center">
                         {selectedArtist.tag?.split('·').map((t: string, i: number) => (
                           <span key={i} className="text-[9px] tracking-[0.2em] uppercase text-black bg-white px-2 py-0.5 font-bold">
@@ -158,14 +163,10 @@ export default function Artists() {
                           </span>
                         ))}
                       </div>
-
-                      {/* Bio */}
                       <p className="font-sans text-[13px] text-white/80 leading-relaxed max-w-xs whitespace-pre-wrap">
                         {selectedArtist.bio}
                       </p>
                     </div>
-
-                    {/* Links as styled buttons */}
                     <div className="flex flex-wrap gap-3 justify-center w-full">
                       {selectedArtist.links?.map((link: any, i: number) => (
                         <a
@@ -182,8 +183,8 @@ export default function Artists() {
                   </div>
                 </div>
 
-                {/* ── DESKTOP LAYOUT (unchanged) ── */}
-                <div className="hidden md:flex flex-row gap-24 items-start w-full flex-grow pt-0">
+                {/* ── DESKTOP LAYOUT ── */}
+                <div className="hidden md:flex flex-row gap-24 items-center w-full flex-grow pt-0">
                   <motion.div 
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -193,7 +194,7 @@ export default function Artists() {
                     <img src={selectedArtist.profilePicture} alt={selectedArtist.name} className="w-full h-auto max-h-[70vh] object-contain" />
                   </motion.div>
                   
-                  <div className="flex flex-col items-start text-left flex-1 w-full pt-12 h-full">
+                  <div className="flex flex-col items-start text-left flex-1 w-full pt-0 h-full justify-center">
                     <motion.div 
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
