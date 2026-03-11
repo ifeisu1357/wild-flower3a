@@ -146,7 +146,7 @@ export default function Artists() {
                     <img
                       src={selectedArtist.profilePicture}
                       alt={selectedArtist.name}
-                      className="w-full h-full object-contain max-h-full"
+                      className="w-[70%] h-full object-contain max-h-full"
                     />
                   </div>
 
@@ -194,7 +194,7 @@ export default function Artists() {
                     <img src={selectedArtist.profilePicture} alt={selectedArtist.name} className="w-full h-auto max-h-[70vh] object-contain" />
                   </motion.div>
                   
-                  <div className="flex flex-col items-start text-left flex-1 w-full pt-0 h-full justify-center">
+                  <div className="flex flex-col items-start text-left flex-1 w-full pt-30 h-full justify-start">
                     <motion.div 
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
