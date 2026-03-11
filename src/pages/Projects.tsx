@@ -57,6 +57,7 @@ function Countdown({ targetDate }: { targetDate: string }) {
 
 export default function Projects() {
   const navigate = useNavigate();
+  const [tappedId, setTappedId] = useState<string | null>(null);
 
   useEffect(() => {
     document.title = '專案 - WILDFLOWER野花';
@@ -71,10 +72,22 @@ export default function Projects() {
     meta.content = description;
   }, []);
 
-  const handleProjectClick = (project: any) => {
+  const handleProjectClick = (project: any, isMobile: boolean) => {
+    if (isMobile) {
+      if (tappedId === project.id) {
+        // Second tap: navigate (unless future)
+        if (project.publishDate && getTargetTime(project.publishDate) > new Date().getTime()) return;
+        navigate(`/project/${project.id}`);
+      } else {
+        // First tap: show overlay
+        setTappedId(project.id);
+      }
+      return;
+    }
+    // Desktop: original behavior
     if (project.publishDate) {
       const isFuture = getTargetTime(project.publishDate) > new Date().getTime();
-      if (isFuture) return; // Disable click if countdown is active
+      if (isFuture) return;
     }
     navigate(`/project/${project.id}`);
   };
@@ -87,8 +100,8 @@ export default function Projects() {
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className="h-full w-full flex flex-col px-8 md:px-16 overflow-y-auto"
     >
-      <div className="flex-grow flex items-center justify-center">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-0 w-full max-w-3xl mx-auto shadow-lg md:shadow-2xl shadow-black/50">
+      <div className="flex-grow flex items-center justify-center" onClick={() => setTappedId(null)}>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-0 w-full max-w-3xl mx-auto shadow-lg md:shadow-2xl shadow-black/50" onClick={(e) => { if (e.target === e.currentTarget) setTappedId(null); }}>
           {projects.map((project: any, index: number) => {
             const isFuture = project.publishDate && getTargetTime(project.publishDate) > new Date().getTime();
 
@@ -99,7 +112,15 @@ export default function Projects() {
                 transition={{ delay: index * 0.08, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 key={project.id} 
                 className={`aspect-square relative group overflow-hidden bg-[#151515] ${isFuture ? 'cursor-default' : 'hover-trigger cursor-pointer'}`}
-                onClick={() => handleProjectClick(project)}
+                onClick={(e) => {
+                  const isMobile = window.matchMedia('(hover: none)').matches;
+                  if (isMobile) {
+                    e.stopPropagation();
+                    handleProjectClick(project, true);
+                  } else {
+                    handleProjectClick(project, false);
+                  }
+                }}
               >
                 <img 
                   src={project.image} 
@@ -107,7 +128,7 @@ export default function Projects() {
                   className="w-full h-full object-cover transition-transform duration-700 ease-[0.16,1,0.3,1] group-hover:scale-105"
                 />
                 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 md:p-6 z-20">
+                <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 flex flex-col justify-end p-4 md:p-6 z-20 ${tappedId === project.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
                   <h3 className="font-sans font-bold text-sm md:text-lg tracking-widest text-white mb-1">{project.title}</h3>
                   {project.artist && (
                     <p className="text-[8px] md:text-[10px] tracking-[0.2em] text-white/70 uppercase font-sans">{project.artist}</p>

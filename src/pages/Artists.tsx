@@ -69,7 +69,7 @@ export default function Artists() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-x-0 bottom-0 top-6 md:top-0 flex"
+            className="absolute inset-x-0 bottom-0 top-0 md:top-0 flex"
             style={{
               backgroundColor: selectedArtist.background?.startsWith('#') ? selectedArtist.background : '#111',
               backgroundImage: selectedArtist.background?.startsWith('http') ? `url(${selectedArtist.background})` : 'none',
@@ -120,7 +120,7 @@ export default function Artists() {
                     className="w-full md:w-1/2 flex-shrink-0 flex justify-center md:justify-start md:-ml-8 lg:-ml-16"
                   >
                     {/* Uncropped image */}
-                    <img src={selectedArtist.profilePicture} alt={selectedArtist.name} className="w-full h-auto max-h-[38vh] md:max-h-[70vh] object-contain" />
+                    <img src={selectedArtist.profilePicture} alt={selectedArtist.name} className="w-full h-auto max-h-[38vh] md:max-h-[70vh] object-contain -mt-4 md:mt-0" />
                   </motion.div>
                   
                   <div className="flex flex-col items-center md:items-start text-center md:text-left flex-1 w-full pt-2 md:pt-12 h-full">
@@ -152,7 +152,7 @@ export default function Artists() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                      className="font-sans text-[11px] md:text-base text-white/90 leading-relaxed max-w-xl mb-4 md:mb-16 drop-shadow-md whitespace-pre-wrap mt-3 md:mt-0"
+                      className="font-sans text-[14px] md:text-base text-white/90 leading-relaxed max-w-xl mb-4 md:mb-16 drop-shadow-md whitespace-pre-wrap mt-3 md:mt-0"
                     >
                       {selectedArtist.bio}
                     </motion.p>

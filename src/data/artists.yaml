@@ -19,11 +19,11 @@
 - id: "ifei"
   name: "蘇裔非"
   tag: "製作人/ARTIST"
-  bio: "測試123"
+  bio: "AAAAAAAAAAA"
   profilePicture: "/artist/syifei.jpg"
   background: "#28392e"
   links:
-    - label: "INSTAGRAM"
+    - label: "IG"
       url: "https://www.instagram.com/ifeisu_"
     - label: "網站"
       url: "https://ifeisu.co"
@@ -35,7 +35,7 @@
   profilePicture: "/artist/mgs.jpg"
   background: "#24303D"
   links:
-    - label: "INSTAGRAM"
+    - label: "IG"
       url: "https://www.instagram.com/mgsmakegoodshit"
 
 - id: "mufan"
@@ -45,7 +45,7 @@
   profilePicture: "/artist/mufan.jpg"
   background: "#414042"
   links:
-    - label: "INSTAGRAM"
+    - label: "IG"
       url: "https://www.instagram.com/mufan.pdf"
 
 - id: "baifen"
@@ -55,8 +55,8 @@
   profilePicture: "/artist/bafen.jpg"
   background: "#402E2C"
   links:
-    - label: "INSTAGRAM"
-      url: ""
+    - label: "IG"
+      url: "https://www.instagram.com/bai_fane100/"
 
 - id: "miaomiao"
   name: "黃聿謙"
@@ -65,7 +65,7 @@
   profilePicture: "/artist/miao.jpg"
   background: "#3C3D31"
   links:
-    - label: "INSTAGRAM"
+    - label: "IG"
       url: "https://www.instagram.com/miaomiaonj/"
 
 - id: "SCOTT"
@@ -75,5 +75,5 @@
   profilePicture: "/artist/scott.jpg"
   background: "#1F3E23"
   links:
-    - label: "INSTAGRAM"
+    - label: "IG"
       url: "https://www.instagram.com/scottkrx/"
