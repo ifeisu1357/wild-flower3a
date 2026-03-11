@@ -58,6 +58,19 @@ function Countdown({ targetDate }: { targetDate: string }) {
 export default function Projects() {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    document.title = '專案 - WILDFLOWER野花';
+
+    const description = 'WILDFLOWER RUN THIS WORLD';
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'description';
+      document.head.appendChild(meta);
+    }
+    meta.content = description;
+  }, []);
+
   const handleProjectClick = (project: any) => {
     if (project.publishDate) {
       const isFuture = getTargetTime(project.publishDate) > new Date().getTime();

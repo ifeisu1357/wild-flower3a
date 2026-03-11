@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 import eventsYaml from '../data/events.yaml?raw';
@@ -7,6 +7,18 @@ import YAML from 'yaml';
 const events = YAML.parse(eventsYaml);
 
 export default function Events() {
+  useEffect(() => {
+    document.title = '活動 - WILDFLOWER野花';
+
+    const description = 'WILDFLOWER RUN THIS WORLD';
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'description';
+      document.head.appendChild(meta);
+    }
+    meta.content = description;
+  }, []);
   return (
     <div className="h-full w-full flex items-center justify-center px-4 md:px-12 overflow-y-auto">
       <div className="flex flex-col justify-center w-full max-w-5xl gap-1 md:gap-2 text-xs md:text-sm text-white font-sans font-light">

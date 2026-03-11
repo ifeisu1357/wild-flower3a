@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'motion/react';
 import homeYaml from '../data/home.yaml?raw';
 import YAML from 'yaml';
@@ -5,6 +6,19 @@ import YAML from 'yaml';
 const homeData = YAML.parse(homeYaml);
 
 export default function Home() {
+  useEffect(() => {
+    document.title = 'WILDFLOWER野花';
+
+    const description = 'WILDFLOWER RUN THIS WORLD';
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'description';
+      document.head.appendChild(meta);
+    }
+    meta.content = description;
+  }, []);
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}

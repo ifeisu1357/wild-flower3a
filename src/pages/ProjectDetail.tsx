@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import projectsYaml from '../data/projects.yaml?raw';
@@ -8,6 +9,20 @@ const projects = YAML.parse(projectsYaml);
 export default function ProjectDetail() {
   const { id } = useParams();
   const project = projects.find((p: any) => p.id === id);
+
+  useEffect(() => {
+    const baseTitle = 'WILDFLOWER野花';
+    document.title = project ? `${project.title} - ${baseTitle}` : baseTitle;
+
+    const description = 'WILDFLOWER RUN THIS WORLD';
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'description';
+      document.head.appendChild(meta);
+    }
+    meta.content = description;
+  }, [project]);
 
   if (!project) {
     return (

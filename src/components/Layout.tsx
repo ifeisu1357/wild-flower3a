@@ -5,6 +5,11 @@ export default function Layout() {
   const location = useLocation();
 
   useEffect(() => {
+    // Skip custom cursor on touch / mobile devices
+    if (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) {
+      return;
+    }
+
     const cur = document.getElementById('cur');
     const ring = document.getElementById('cur-r');
     let mx = 0, my = 0, rx = 0, ry = 0;
