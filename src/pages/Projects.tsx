@@ -6,8 +6,6 @@ import YAML from 'yaml';
 
 const projects = YAML.parse(projectsYaml);
 
-import { Lock } from 'lucide-react';
-
 const getTargetTime = (dateStr: string) => {
   let targetString = dateStr;
   if (targetString.endsWith('Z')) {
@@ -129,9 +127,10 @@ export default function Projects() {
                 />
                 
                 <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 flex flex-col justify-end p-4 md:p-6 z-20 ${tappedId === project.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
-                  <h3 className="font-sans font-bold text-sm md:text-lg tracking-widest text-white mb-1">{project.title}</h3>
+                  {/* Mobile: future = countdown only, not future = title + artist */}
+                  <h3 className={`font-sans font-bold text-sm md:text-lg tracking-widest text-white mb-1 ${isFuture ? 'md:block hidden' : ''}`}>{project.title}</h3>
                   {project.artist && (
-                    <p className="text-[8px] md:text-[10px] tracking-[0.2em] text-white/70 uppercase font-sans">{project.artist}</p>
+                    <p className={`text-[8px] md:text-[10px] tracking-[0.2em] text-white/70 uppercase font-sans ${isFuture ? 'md:block hidden' : ''}`}>{project.artist}</p>
                   )}
                   {isFuture && <Countdown targetDate={project.publishDate} />}
                 </div>

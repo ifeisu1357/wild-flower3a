@@ -40,7 +40,7 @@ export default function Home() {
       )}
 
       <div className="absolute bottom-12 right-6 md:bottom-24 md:right-24 pointer-events-none flex items-end gap-3 md:gap-10 z-10">
-        <span className="text-white text-sm md:text-lg tracking-[0.1em] font-sans font-bold whitespace-nowrap mb-0.5 md:mb-2">一個概念。</span>
+        <span className="text-white text-sm md:text-lg tracking-[0.1em] font-sans font-bold whitespace-nowrap mb-0.5 md:mb-2">一個概念</span>
         <img src="/logo/logo.png" alt="WILDFLOWER" className="w-28 md:w-48 lg:w-64 object-contain" />
       </div>
     </motion.div>

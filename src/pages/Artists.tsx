@@ -21,6 +21,20 @@ export default function Artists() {
     meta.content = description;
   }, []);
 
+  // Hide footer on mobile when artist is selected
+  useEffect(() => {
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+    if (!isMobile) return;
+    const footer = document.getElementById('site-footer') as HTMLElement | null;
+    if (!footer) return;
+    if (selectedArtist) {
+      footer.style.display = 'none';
+    } else {
+      footer.style.display = '';
+    }
+    return () => { footer.style.display = ''; };
+  }, [selectedArtist]);
+
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -96,41 +110,92 @@ export default function Artists() {
             </div>
 
             {/* Main Content */}
-            <div className="flex-1 overflow-hidden md:overflow-y-auto pt-10 pb-12 md:py-12 px-6 md:px-16 lg:px-24 bg-black/20 backdrop-blur-sm z-10 flex flex-col items-center relative">
+            <div className="flex-1 overflow-hidden md:overflow-y-auto md:py-12 md:px-16 lg:px-24 bg-black/20 backdrop-blur-sm z-10 flex flex-col items-center relative">
               {/* Mobile Back Button */}
               <button 
                 onClick={() => setSelectedArtist(null)}
                 className="md:hidden absolute top-2 left-4 z-50 text-white/50 hover:text-white font-sans text-[10px] tracking-widest uppercase flex items-center gap-1"
               >
                 <span>←</span> BACK
-              </button>              <motion.div 
+              </button>
+
+              <motion.div 
                 key={selectedArtist.id}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full max-w-6xl flex flex-col gap-4 md:gap-16 mt-2 md:mt-0 relative z-10 flex-grow"
+                className="w-full max-w-6xl flex flex-col md:gap-16 relative z-10 h-full md:flex-grow md:mt-0"
               >
-                
-                {/* Top Section: Image & Info */}
-                <div className="flex flex-col md:flex-row gap-4 md:gap-24 items-start w-full flex-grow">
+                {/* ── MOBILE LAYOUT ── */}
+                <div className="flex md:hidden flex-col h-full">
+                  {/* Image — takes up top ~45% */}
+                  <div className="flex-shrink-0 w-full flex items-end justify-center" style={{ height: '44%' }}>
+                    <img
+                      src={selectedArtist.profilePicture}
+                      alt={selectedArtist.name}
+                      className="h-full w-full object-cover object-top"
+                    />
+                  </div>
+
+                  {/* Info card — bottom portion */}
+                  <div className="flex flex-col items-center text-center px-6 pt-5 pb-6 flex-1 justify-between">
+                    <div className="flex flex-col items-center gap-3 w-full">
+                      {/* Name */}
+                      <h2 className="font-sans font-black text-4xl tracking-tighter text-white uppercase leading-none">
+                        {selectedArtist.name}
+                      </h2>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2 justify-center">
+                        {selectedArtist.tag?.split('·').map((t: string, i: number) => (
+                          <span key={i} className="text-[9px] tracking-[0.2em] uppercase text-black bg-white px-2 py-0.5 font-bold">
+                            {t.trim()}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Bio */}
+                      <p className="font-sans text-[13px] text-white/80 leading-relaxed max-w-xs whitespace-pre-wrap">
+                        {selectedArtist.bio}
+                      </p>
+                    </div>
+
+                    {/* Links as styled buttons */}
+                    <div className="flex flex-wrap gap-3 justify-center pt-4 w-full">
+                      {selectedArtist.links?.map((link: any, i: number) => (
+                        <a
+                          key={i}
+                          href={link.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="font-sans text-[10px] tracking-[0.2em] uppercase text-white border border-white/40 hover:border-white hover:bg-white hover:text-black transition-all px-5 py-2 font-bold"
+                        >
+                          {link.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* ── DESKTOP LAYOUT (unchanged) ── */}
+                <div className="hidden md:flex flex-row gap-24 items-start w-full flex-grow pt-0">
                   <motion.div 
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                    className="w-full md:w-1/2 flex-shrink-0 flex justify-center md:justify-start md:-ml-8 lg:-ml-16"
+                    className="w-1/2 flex-shrink-0 flex justify-start -ml-8 lg:-ml-16"
                   >
-                    {/* Uncropped image */}
-                    <img src={selectedArtist.profilePicture} alt={selectedArtist.name} className="w-full h-auto max-h-[38vh] md:max-h-[70vh] object-contain -mt-4 md:mt-0" />
+                    <img src={selectedArtist.profilePicture} alt={selectedArtist.name} className="w-full h-auto max-h-[70vh] object-contain" />
                   </motion.div>
                   
-                  <div className="flex flex-col items-center md:items-start text-center md:text-left flex-1 w-full pt-2 md:pt-12 h-full">
+                  <div className="flex flex-col items-start text-left flex-1 w-full pt-12 h-full">
                     <motion.div 
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                      className="w-full flex justify-center md:justify-between items-end mb-2 md:mb-8"
+                      className="w-full flex justify-between items-end mb-8"
                     >
-                      <h2 className="font-sans font-black text-3xl md:text-8xl tracking-tighter text-white uppercase leading-none">
+                      <h2 className="font-sans font-black text-8xl tracking-tighter text-white uppercase leading-none">
                         {selectedArtist.name}
                       </h2>
                     </motion.div>
@@ -139,10 +204,10 @@ export default function Artists() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                      className="flex flex-wrap gap-2 md:gap-3 mb-3 md:mb-12 w-full justify-center md:justify-end"
+                      className="flex flex-wrap gap-3 mb-12 w-full justify-end"
                     >
                       {selectedArtist.tag?.split('·').map((t: string, i: number) => (
-                        <span key={i} className="text-[9px] md:text-xs tracking-[0.2em] uppercase text-black bg-white px-2 py-0.5 md:px-3 md:py-1 font-bold">
+                        <span key={i} className="text-xs tracking-[0.2em] uppercase text-black bg-white px-3 py-1 font-bold">
                           {t.trim()}
                         </span>
                       ))}
@@ -152,7 +217,7 @@ export default function Artists() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                      className="font-sans text-[14px] md:text-base text-white/90 leading-relaxed max-w-xl mb-4 md:mb-16 drop-shadow-md whitespace-pre-wrap mt-3 md:mt-0"
+                      className="font-sans text-base text-white/90 leading-relaxed max-w-xl mb-16 drop-shadow-md whitespace-pre-wrap"
                     >
                       {selectedArtist.bio}
                     </motion.p>
@@ -161,10 +226,10 @@ export default function Artists() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                      className="flex flex-wrap gap-4 md:gap-6 w-full justify-center md:justify-end pt-4 md:pt-8 mt-6 md:mt-auto pb-4 md:pb-0"
+                      className="flex flex-wrap gap-6 w-full justify-end pt-8 mt-auto"
                     >
                       {selectedArtist.links?.map((link: any, i: number) => (
-                        <a key={i} href={link.url} target="_blank" rel="noreferrer" className="font-sans text-[10px] md:text-xs tracking-[0.2em] uppercase text-white/70 hover:text-white transition-colors hover-trigger flex items-center gap-1 md:gap-2 drop-shadow-md">
+                        <a key={i} href={link.url} target="_blank" rel="noreferrer" className="font-sans text-xs tracking-[0.2em] uppercase text-white/70 hover:text-white transition-colors hover-trigger flex items-center gap-2 drop-shadow-md">
                           {link.label}
                         </a>
                       ))}
