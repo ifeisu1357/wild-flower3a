@@ -21,18 +21,23 @@ export default function Artists() {
     meta.content = description;
   }, []);
 
-  // Hide footer on mobile when artist is selected
+  // Hide footer + remove main padding on mobile when artist is selected
   useEffect(() => {
     const isMobile = window.matchMedia('(max-width: 767px)').matches;
     if (!isMobile) return;
     const footer = document.getElementById('site-footer') as HTMLElement | null;
-    if (!footer) return;
+    const main = document.querySelector('main') as HTMLElement | null;
     if (selectedArtist) {
-      footer.style.display = 'none';
+      if (footer) footer.style.display = 'none';
+      if (main) main.style.paddingBottom = '0';
     } else {
-      footer.style.display = '';
+      if (footer) footer.style.display = '';
+      if (main) main.style.paddingBottom = '';
     }
-    return () => { footer.style.display = ''; };
+    return () => {
+      if (footer) footer.style.display = '';
+      if (main) main.style.paddingBottom = '';
+    };
   }, [selectedArtist]);
 
   return (
@@ -128,17 +133,17 @@ export default function Artists() {
               >
                 {/* ── MOBILE LAYOUT ── */}
                 <div className="flex md:hidden flex-col h-full">
-                  {/* Image — takes up top ~45% */}
-                  <div className="flex-shrink-0 w-full flex items-end justify-center" style={{ height: '44%' }}>
+                  {/* Image — uncropped, centered, takes natural space */}
+                  <div className="flex-shrink-0 w-full flex items-center justify-center pt-8" style={{ height: '50%' }}>
                     <img
                       src={selectedArtist.profilePicture}
                       alt={selectedArtist.name}
-                      className="h-full w-full object-cover object-top"
+                      className="h-full w-full object-contain"
                     />
                   </div>
 
-                  {/* Info card — bottom portion */}
-                  <div className="flex flex-col items-center text-center px-6 pt-5 pb-6 flex-1 justify-between">
+                  {/* Info card — pushed toward bottom */}
+                  <div className="flex flex-col items-center text-center px-6 pt-2 pb-8 flex-1 justify-end gap-4">
                     <div className="flex flex-col items-center gap-3 w-full">
                       {/* Name */}
                       <h2 className="font-sans font-black text-4xl tracking-tighter text-white uppercase leading-none">
@@ -161,7 +166,7 @@ export default function Artists() {
                     </div>
 
                     {/* Links as styled buttons */}
-                    <div className="flex flex-wrap gap-3 justify-center pt-4 w-full">
+                    <div className="flex flex-wrap gap-3 justify-center w-full">
                       {selectedArtist.links?.map((link: any, i: number) => (
                         <a
                           key={i}
