@@ -18,8 +18,8 @@
 
 - id: "ifei"
   name: "蘇裔非"
-  tag: "PRODUCER/ARTIST"
-  bio: ""
+  tag: "HEAD/PRODUCER/ARTIST"
+  bio: "ANTISOCIAL EXTROVERT"
   profilePicture: "/artist/syifei.jpg"
   background: "#28392e"
   links:
@@ -69,19 +69,3 @@
     - label: "IG"
       url: "https://www.instagram.com/bai_fane100/"
 
-- id: "luren"
-  name: "南方旅人"
-  tag: "團體"
-  bio: "少時的你 早已睡著了嗎？"
-  profilePicture: "/artist/luren.jpg"
-  background: "#111111"
-
-- id: "miaomiao"
-  name: "黃聿謙"
-  tag: "VISUAL"
-  bio: "ddddedd"
-  profilePicture: "/artist/miao.jpg"
-  background: "#3C3D31"
-  links:
-    - label: "IG"
-      url: "https://www.instagram.com/miaomiaonj/"
