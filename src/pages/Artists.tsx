@@ -140,18 +140,18 @@ export default function Artists() {
                 className="w-full max-w-6xl flex flex-col md:gap-16 relative z-10 h-full md:flex-grow md:mt-0"
               >
                 {/* ── MOBILE LAYOUT ── */}
-                <div className="flex md:hidden flex-col h-full">
-                  {/* Image — sits between top and name, equal spacing */}
-                  <div className="flex-1 flex items-center justify-center px-8 mt-3">
+                <div className="flex md:hidden flex-col h-full justify-end pb-10">
+                  {/* Image — directly above text, fixed gap */}
+                  <div className="flex justify-center px-12 mb-6">
                     <img
                       src={selectedArtist.profilePicture}
                       alt={selectedArtist.name}
-                      className="w-[60%] h-full object-contain max-h-full"
+                      className="w-[72%] object-contain max-h-[42vh]"
                     />
                   </div>
 
-                  {/* Info card — bottom, same spacing as top */}
-                  <div className="flex-1 flex flex-col items-center text-center px-6 pb-8 justify-center gap-4 -mt-3">
+                  {/* Info — anchored to bottom */}
+                  <div className="flex flex-col items-center text-center px-6 gap-4">
                     <div className="flex flex-col items-center gap-3 w-full">
                       <h2 className="font-sans font-black text-4xl tracking-tighter text-white uppercase leading-none">
                         {selectedArtist.name}
