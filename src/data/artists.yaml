@@ -18,8 +18,8 @@
 
 - id: "ifei"
   name: "蘇裔非"
-  tag: "製作人/ARTIST"
-  bio: "AAAAAAAAAAA"
+  tag: "總監/製作人/ARTIST"
+  bio: "共犯結構的建築師～"
   profilePicture: "/artist/syifei.jpg"
   background: "#28392e"
   links:
@@ -27,10 +27,12 @@
       url: "https://www.instagram.com/ifeisu_"
     - label: "網站"
       url: "https://ifeisu.co"
+    - label: "APPLE MUSIC"
+      url: "https://music.apple.com/artist/%E8%98%87%E8%A3%94%E9%9D%9E/1874516593"
 
 - id: "mgsmakegoodshit"
   name: "MGS"
-  tag: "ARTIST"
+  tag: "MUSIC/ARTIST"
   bio: "自我介紹"
   profilePicture: "/artist/mgs.jpg"
   background: "#24303D"
@@ -40,7 +42,7 @@
 
 - id: "mufan"
   name: "慕凡"
-  tag: "VISUAL"
+  tag: "VISUAL/ARTIST"
   bio: "aaaa"
   profilePicture: "/artist/mufan.jpg"
   background: "#414042"
@@ -50,7 +52,7 @@
 
 - id: "baifen"
   name: "百分"
-  tag: "ARTIST"
+  tag: "VOICE/ARTIST"
   bio: "ddddedd"
   profilePicture: "/artist/bafen.jpg"
   background: "#402E2C"
@@ -70,7 +72,7 @@
 
 - id: "SCOTT"
   name: "SCOTT"
-  tag: "ARTIST"
+  tag: "VOICE/ARTIST"
   bio: "ddddedd"
   profilePicture: "/artist/scott.jpg"
   background: "#1F3E23"
