@@ -140,7 +140,7 @@ export default function Artists() {
                 className="w-full max-w-6xl flex flex-col md:gap-16 relative z-10 h-full md:flex-grow md:mt-0"
               >
                 {/* ── MOBILE LAYOUT ── */}
-                <div className="flex md:hidden flex-col h-full justify-end pb-10">
+                <div className="flex md:hidden flex-col h-full justify-end" style={{ paddingBottom: 'max(2.5rem, calc(env(safe-area-inset-bottom) + 1rem))' }}>
                   {/* Image — directly above text, fixed gap */}
                   <div className="flex justify-center px-12 mb-6">
                     <img
@@ -194,7 +194,7 @@ export default function Artists() {
                     <img src={selectedArtist.profilePicture} alt={selectedArtist.name} className="w-full h-auto max-h-[70vh] object-contain" />
                   </motion.div>
                   
-                  <div className="flex flex-col items-start text-left flex-1 w-full pt-0 h-full justify-center">
+                  <div className="flex flex-col items-start text-left flex-1 w-full pt-[120px] h-full justify-start">
                     <motion.div 
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
