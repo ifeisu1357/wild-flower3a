@@ -19,7 +19,7 @@
 - id: "ifei"
   name: "蘇裔非"
   tag: "HEAD/PRODUCER/ARTIST"
-  bio: "ANTISOCIAL EXTROVERT"
+  bio: "小拳石"
   profilePicture: "/artist/syifei.jpg"
   background: "#28392e"
   links:
@@ -52,7 +52,7 @@
 - id: "SCOTT"
   name: "SCOTT"
   tag: "ARTIST"
-  bio: "ddddedd"
+  bio: ""
   profilePicture: "/artist/scott.jpg"
   background: "#1F3E23"
   links:
@@ -69,3 +69,21 @@
     - label: "IG"
       url: "https://www.instagram.com/bai_fane100/"
 
+- id: "miaomiao"
+  name: "黃聿謙"
+  tag: "VISUAL"
+  bio: "半嬌面"
+  profilePicture: "/artist/bafen.jpg"
+  background: "#402E2C"
+  links:
+    - label: "IG"
+      url: "https://www.instagram.com/bai_fane100/"
+
+- id: "booboobad"
+  name: "Booboobad"
+  tag: "ARTIST"
+  profilePicture: "/artist/booboobad.jpg"
+  background: "#48484A"
+  links:
+    - label: "IG"
+      url: "https://www.instagram.com/tuabagetabadtrip_/"
