@@ -18,8 +18,8 @@
 
 - id: "ifei"
   name: "蘇裔非"
-  tag: "總監/製作人/ARTIST"
-  bio: "共犯結構的建築師～"
+  tag: "PRODUCER/ARTIST"
+  bio: ""
   profilePicture: "/artist/syifei.jpg"
   background: "#28392e"
   links:
@@ -27,12 +27,10 @@
       url: "https://www.instagram.com/ifeisu_"
     - label: "網站"
       url: "https://ifeisu.co"
-    - label: "APPLE MUSIC"
-      url: "https://music.apple.com/artist/%E8%98%87%E8%A3%94%E9%9D%9E/1874516593"
 
 - id: "mgsmakegoodshit"
   name: "MGS"
-  tag: "MUSIC/ARTIST"
+  tag: "ARTIST"
   bio: "自我介紹"
   profilePicture: "/artist/mgs.jpg"
   background: "#24303D"
@@ -42,7 +40,7 @@
 
 - id: "mufan"
   name: "慕凡"
-  tag: "VISUAL/ARTIST"
+  tag: "VISUAL"
   bio: "aaaa"
   profilePicture: "/artist/mufan.jpg"
   background: "#414042"
@@ -50,15 +48,33 @@
     - label: "IG"
       url: "https://www.instagram.com/mufan.pdf"
 
+
+- id: "SCOTT"
+  name: "SCOTT"
+  tag: "ARTIST"
+  bio: "ddddedd"
+  profilePicture: "/artist/scott.jpg"
+  background: "#1F3E23"
+  links:
+    - label: "IG"
+      url: "https://www.instagram.com/scottkrx/"
+
 - id: "baifen"
   name: "百分"
-  tag: "VOICE/ARTIST"
+  tag: "ARTIST"
   bio: "ddddedd"
   profilePicture: "/artist/bafen.jpg"
   background: "#402E2C"
   links:
     - label: "IG"
       url: "https://www.instagram.com/bai_fane100/"
+
+- id: "luren"
+  name: "南方旅人"
+  tag: "團體"
+  bio: "少時的你 早已睡著了嗎？"
+  profilePicture: "/artist/luren.jpg"
+  background: "#111111"
 
 - id: "miaomiao"
   name: "黃聿謙"
@@ -69,20 +85,3 @@
   links:
     - label: "IG"
       url: "https://www.instagram.com/miaomiaonj/"
-
-- id: "SCOTT"
-  name: "SCOTT"
-  tag: "VOICE/ARTIST"
-  bio: "ddddedd"
-  profilePicture: "/artist/scott.jpg"
-  background: "#1F3E23"
-  links:
-    - label: "IG"
-      url: "https://www.instagram.com/scottkrx/"
-
-- id: "luren"
-  name: "南方旅人"
-  tag: "團體"
-  bio: "少時的你 早已睡著了嗎？"
-  profilePicture: "/artist/luren.jpg"
-  background: "#111111"
