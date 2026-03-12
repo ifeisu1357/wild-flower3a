@@ -146,12 +146,12 @@ export default function Artists() {
                     <img
                       src={selectedArtist.profilePicture}
                       alt={selectedArtist.name}
-                      className="w-full h-full object-contain max-h-full"
+                      className="w-[60%] h-full object-contain max-h-full"
                     />
                   </div>
 
                   {/* Info card — bottom, same spacing as top */}
-                  <div className="flex-1 flex flex-col items-center text-center px-6 pb-8 justify-center gap-4">
+                  <div className="flex-1 flex flex-col items-center text-center px-6 pb-8 justify-center gap-4 -mt-3">
                     <div className="flex flex-col items-center gap-3 w-full">
                       <h2 className="font-sans font-black text-4xl tracking-tighter text-white uppercase leading-none">
                         {selectedArtist.name}
