@@ -49,6 +49,14 @@ export default function Artists() {
   }, [selectedArtist]);
 
   return (
+    <>
+    <style>{`
+      @supports (-webkit-touch-callout: none) {
+        .artist-mobile-content {
+          padding-bottom: max(6rem, calc(env(safe-area-inset-bottom) + 5rem)) !important;
+        }
+      }
+    `}</style>
     <motion.div 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -140,7 +148,7 @@ export default function Artists() {
                 className="w-full max-w-6xl flex flex-col md:gap-16 relative z-10 h-full md:flex-grow md:mt-0"
               >
                 {/* ── MOBILE LAYOUT ── */}
-                <div className="flex md:hidden flex-col h-full justify-end" style={{ paddingBottom: 'max(2.5rem, calc(env(safe-area-inset-bottom) + 1rem))' }}>
+                <div className="flex md:hidden flex-col h-full justify-end artist-mobile-content" style={{ paddingBottom: 'max(2.5rem, calc(env(safe-area-inset-bottom) + 1rem))' }}>
                   {/* Image — directly above text, fixed gap */}
                   <div className="flex justify-center px-12 mb-6">
                     <img
@@ -248,5 +256,6 @@ export default function Artists() {
         )}
       </AnimatePresence>
     </motion.div>
+    </>
   );
 }
