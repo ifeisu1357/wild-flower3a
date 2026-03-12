@@ -77,3 +77,10 @@
   links:
     - label: "IG"
       url: "https://www.instagram.com/scottkrx/"
+
+- id: "luren"
+  name: "南方旅人"
+  tag: "團體"
+  bio: "少時的你 早已睡著了嗎？"
+  profilePicture: "/artist/luren.jpg"
+  background: "#111111"
