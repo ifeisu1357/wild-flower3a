@@ -47,6 +47,16 @@
     - label: "IG"
       url: "https://www.instagram.com/tuabagetabadtrip_/"
 
+- id: "miaomiao"
+  name: "黃聿謙"
+  tag: "VISUAL"
+  bio: ""
+  profilePicture: "/artist/miao.jpg"
+  background: "#504532"
+  links:
+    - label: "IG"
+      url: "https://www.instagram.com/miaomiaonj"
+
 - id: "SOBY"
   name: "Soby"
   tag: "ARTIST"
@@ -65,16 +75,6 @@
   links:
     - label: "IG"
       url: "https://www.instagram.com/mufan.pdf"
-
-- id: "miaomiao"
-  name: "黃聿謙"
-  tag: "VISUAL"
-  bio: ""
-  profilePicture: "/artist/miao.jpg"
-  background: "#504532"
-  links:
-    - label: "IG"
-      url: "https://www.instagram.com/miaomiaonj"
 
 - id: "baifen"
   name: "百分"
