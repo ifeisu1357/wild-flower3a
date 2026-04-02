@@ -18,8 +18,8 @@
 
 - id: "ifei"
   name: "蘇裔非"
-  tag: "HEAD/PRODUCER/ARTIST"
-  bio: "小拳石"
+  tag: "ARTIST"
+  bio: ""
   profilePicture: "/artist/syifei.jpg"
   background: "#28392e"
   links:
@@ -31,7 +31,7 @@
 - id: "mgsmakegoodshit"
   name: "MGS"
   tag: "ARTIST"
-  bio: "自我介紹"
+  bio: ""
   profilePicture: "/artist/mgs.jpg"
   background: "#24303D"
   links:
@@ -41,7 +41,7 @@
 - id: "mufan"
   name: "慕凡"
   tag: "VISUAL"
-  bio: "aaaa"
+  bio: ""
   profilePicture: "/artist/mufan.jpg"
   background: "#414042"
   links:
@@ -62,7 +62,7 @@
 - id: "baifen"
   name: "百分"
   tag: "ARTIST"
-  bio: "ddddedd"
+  bio: ""
   profilePicture: "/artist/bafen.jpg"
   background: "#402E2C"
   links:
@@ -72,8 +72,8 @@
 - id: "miaomiao"
   name: "黃聿謙"
   tag: "VISUAL"
-  bio: "半嬌面"
-  profilePicture: "/artist/bafen.jpg"
+  bio: ""
+  profilePicture: "/artist/miao.jpg"
   background: "#402E2C"
   links:
     - label: "IG"
@@ -87,3 +87,12 @@
   links:
     - label: "IG"
       url: "https://www.instagram.com/tuabagetabadtrip_/"
+
+- id: "karna"
+  name: "KARNA"
+  tag: "VISUAL"
+  profilePicture: "/artist/karna.jpg"
+  background: ""
+  links:
+    - label: "IG"
+      url: "https://www.instagram.com/kanaknotty/"
