@@ -38,6 +38,24 @@
     - label: "IG"
       url: "https://www.instagram.com/mgsmakegoodshit"
 
+- id: "booboobad"
+  name: "Booboobad"
+  tag: "ARTIST"
+  profilePicture: "/artist/booboobad.jpg"
+  background: "#48484A"
+  links:
+    - label: "IG"
+      url: "https://www.instagram.com/tuabagetabadtrip_/"
+
+- id: "SOBY"
+  name: "Soby"
+  tag: "ARTIST"
+  profilePicture: "/artist/soby.jpg"
+  background: ""
+  links:
+    - label: "IG"
+      url: "https://www.instagram.com/_therealsobyplsstandup_"
+
 - id: "mufan"
   name: "慕凡"
   tag: "VISUAL"
@@ -48,16 +66,15 @@
     - label: "IG"
       url: "https://www.instagram.com/mufan.pdf"
 
-
-- id: "SCOTT"
-  name: "SCOTT"
-  tag: "ARTIST"
+- id: "miaomiao"
+  name: "黃聿謙"
+  tag: "VISUAL"
   bio: ""
-  profilePicture: "/artist/scott.jpg"
-  background: "#1F3E23"
+  profilePicture: "/artist/miao.jpg"
+  background: "#504532"
   links:
     - label: "IG"
-      url: "https://www.instagram.com/scottkrx/"
+      url: "https://www.instagram.com/miaomiaonj"
 
 - id: "baifen"
   name: "百分"
@@ -69,33 +86,15 @@
     - label: "IG"
       url: "https://www.instagram.com/bai_fane100/"
 
-- id: "SOBY"
-  name: "Soby"
+- id: "SCOTT"
+  name: "SCOTT"
   tag: "ARTIST"
-  profilePicture: "/artist/soby.jpg"
-  background: ""
-  links:
-    - label: "IG"
-      url: "https://www.instagram.com/_therealsobyplsstandup_"
-
-- id: "miaomiao"
-  name: "黃聿謙"
-  tag: "VISUAL"
   bio: ""
-  profilePicture: "/artist/miao.jpg"
-  background: "#402E2C"
+  profilePicture: "/artist/scott.jpg"
+  background: "#1D2B21"
   links:
     - label: "IG"
-      url: "https://www.instagram.com/bai_fane100/"
-
-- id: "booboobad"
-  name: "Booboobad"
-  tag: "ARTIST"
-  profilePicture: "/artist/booboobad.jpg"
-  background: "#48484A"
-  links:
-    - label: "IG"
-      url: "https://www.instagram.com/tuabagetabadtrip_/"
+      url: "https://www.instagram.com/scottkrx/"
 
 - id: "karna"
   name: "KARNA"
