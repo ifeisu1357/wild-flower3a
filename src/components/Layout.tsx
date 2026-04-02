@@ -77,6 +77,7 @@ export default function Layout() {
       <footer id="site-footer" className="fixed bottom-4 left-0 right-0 z-50 flex justify-center md:justify-between items-center px-8 md:px-16 pointer-events-none">
         <div className="pointer-events-auto flex gap-4 md:gap-6 text-[8px] md:text-[10px] tracking-[0.26em] uppercase text-white/40 font-sans">
           <a href="https://www.instagram.com/wldflwrtw/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors hover-trigger">INSTAGRAM</a>
+          <a href="https://www.youtube.com/@wldflrtw" target="_blank" rel="noreferrer" className="hover:text-white transition-colors hover-trigger">YOUTUBE</a>
         </div>
 
         <div className="pointer-events-auto text-[6px] md:text-[8px] tracking-[0.18em] uppercase text-white/40 hidden md:block font-sans">
