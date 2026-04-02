@@ -38,14 +38,15 @@
     - label: "IG"
       url: "https://www.instagram.com/mgsmakegoodshit"
 
-- id: "booboobad"
-  name: "Booboobad"
+- id: "SCOTT"
+  name: "SCOTT"
   tag: "ARTIST"
-  profilePicture: "/artist/booboobad.jpg"
-  background: "#48484A"
+  bio: ""
+  profilePicture: "/artist/scott.jpg"
+  background: "#1D2B21"
   links:
     - label: "IG"
-      url: "https://www.instagram.com/tuabagetabadtrip_/"
+      url: "https://www.instagram.com/scottkrx/"
 
 - id: "miaomiao"
   name: "黃聿謙"
@@ -56,6 +57,25 @@
   links:
     - label: "IG"
       url: "https://www.instagram.com/miaomiaonj"
+
+- id: "booboobad"
+  name: "Booboobad"
+  tag: "ARTIST"
+  profilePicture: "/artist/booboobad.jpg"
+  background: "#48484A"
+  links:
+    - label: "IG"
+      url: "https://www.instagram.com/tuabagetabadtrip_/"
+
+- id: "baifen"
+  name: "百分"
+  tag: "ARTIST"
+  bio: ""
+  profilePicture: "/artist/bafen.jpg"
+  background: "#402E2C"
+  links:
+    - label: "IG"
+      url: "https://www.instagram.com/bai_fane100/"
 
 - id: "SOBY"
   name: "Soby"
@@ -76,31 +96,11 @@
     - label: "IG"
       url: "https://www.instagram.com/mufan.pdf"
 
-- id: "baifen"
-  name: "百分"
-  tag: "ARTIST"
-  bio: ""
-  profilePicture: "/artist/bafen.jpg"
-  background: "#402E2C"
-  links:
-    - label: "IG"
-      url: "https://www.instagram.com/bai_fane100/"
-
-- id: "SCOTT"
-  name: "SCOTT"
-  tag: "ARTIST"
-  bio: ""
-  profilePicture: "/artist/scott.jpg"
-  background: "#1D2B21"
-  links:
-    - label: "IG"
-      url: "https://www.instagram.com/scottkrx/"
-
 - id: "karna"
   name: "KARNA"
   tag: "VISUAL"
   profilePicture: "/artist/karna.jpg"
-  background: ""
+  background: "#1A3B38"
   links:
     - label: "IG"
       url: "https://www.instagram.com/kanaknotty/"
