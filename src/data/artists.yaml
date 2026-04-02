@@ -69,6 +69,15 @@
     - label: "IG"
       url: "https://www.instagram.com/bai_fane100/"
 
+- id: "SOBY"
+  name: "Soby"
+  tag: "ARTIST"
+  profilePicture: "/artist/soby.jpg"
+  background: ""
+  links:
+    - label: "IG"
+      url: "https://www.instagram.com/_therealsobyplsstandup_"
+
 - id: "miaomiao"
   name: "黃聿謙"
   tag: "VISUAL"
@@ -96,3 +105,4 @@
   links:
     - label: "IG"
       url: "https://www.instagram.com/kanaknotty/"
+
