@@ -67,16 +67,6 @@
     - label: "IG"
       url: "https://www.instagram.com/tuabagetabadtrip_/"
 
-- id: "baifen"
-  name: "百分"
-  tag: "ARTIST"
-  bio: ""
-  profilePicture: "/artist/bafen.jpg"
-  background: "#402E2C"
-  links:
-    - label: "IG"
-      url: "https://www.instagram.com/bai_fane100/"
-
 - id: "SOBY"
   name: "Soby"
   tag: "ARTIST"
